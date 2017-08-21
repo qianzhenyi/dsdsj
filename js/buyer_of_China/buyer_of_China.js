@@ -419,7 +419,7 @@ option[0] = {
         $.getJSON('../js/jiangxi.json', function (data) {
             echarts.registerMap('jiangxi', data);
             var chart_detail = echarts.init(oDetail_b);
-           chart_detail.setOption({
+         	chart_detail.setOption({
                 series: [{
                     type: 'map',
                     map: 'jiangxi',
