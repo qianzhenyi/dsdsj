@@ -368,18 +368,24 @@ option[0] = {
         $.getJSON('../js/guangdong.json', function (data) {
             echarts.registerMap('guangdong', data);
             var chart_detail = echarts.init(oDetail_a);
-            chart_detail.setOption({
+           chart_detail.setOption({
                 series: [{
                     type: 'map',
                     map: 'guangdong',
-//                  zoom:10,
+					zoom:1.2,
                     label: {
-			            emphasis: {
-			                show: true,
+			            normal: {
+			                show: false,
 			                textStyle:{
-			                	color:'#345F93',
-			                	fontWeight:'bold',
+			                	color:'#000',
 			                	fontSize:16
+			                }
+			            },
+			            emphasis:{
+			            	textStyle:{
+			                	color:'#fff',
+			                	fontWeight:'bold',
+			                	fontSize:18
 			                }
 			            }
 			        },
@@ -391,9 +397,12 @@ option[0] = {
 			                
 			            },
 			            emphasis: {
-			            	areaColor:'#fff',
+			            	areaColor:'#FF8C00',
 			            }
-			        }
+			        },
+			        data:[ 
+                        {name: '湛江市',selected:true},  
+				        ]
                 }]
             });
             chart_detail.on('click',function(params){
